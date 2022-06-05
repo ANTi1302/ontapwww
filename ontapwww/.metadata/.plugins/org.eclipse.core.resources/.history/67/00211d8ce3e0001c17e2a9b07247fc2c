@@ -1,0 +1,11 @@
+package com.ontap.cuoiki.service;
+
+import java.util.List;
+
+import com.ontap.cuoiki.entity.LoaiSP;
+
+public interface LoaiSPService {
+
+	public List<LoaiSP> listLoaiSP();
+	public LoaiSP getLoaiSPbyId(int id);
+}

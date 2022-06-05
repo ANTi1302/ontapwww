@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+E:\ANTi_study\ontapwww\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2910815138.index
+2141784578.index
+175889855.index
+1956282368.index
+106231627.index
+4097144580.index

@@ -1,0 +1,61 @@
+package com.iuh.ontap.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.iuh.ontap.model.SanPham;
+
+
+@Service
+public class SanPhamServiceImpl implements SanPhamService{
+
+	private RestTemplate restTemplate;
+	private String crmRestUrl;
+	@Autowired
+	public SanPhamServiceImpl(RestTemplate restTemplate, String crmRestUrl) {
+		super();
+		this.restTemplate = restTemplate;
+		this.crmRestUrl = crmRestUrl;
+	}
+
+	@Override
+	public SanPham findSP(int id) {
+		SanPham theSanPham = restTemplate.getForObject(crmRestUrl+ "/" + id, SanPham.class);
+		return theSanPham;
+	}
+
+	
+
+	@Override
+	public void save(SanPham sanPham) {
+		int id=sanPham.getMaSP();
+		if (id==0) {
+			restTemplate.postForEntity(crmRestUrl, id, String.class);
+		}else {
+			restTemplate.put(crmRestUrl, id);
+		}
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		restTemplate.delete(crmRestUrl+"/"+id);
+	}
+
+	@Override
+	public List<SanPham> findTheoMaLoai(int id) {
+		ResponseEntity<List<SanPham>> responseEntity = restTemplate.exchange(crmRestUrl, HttpMethod.GET, null,
+				new ParameterizedTypeReference<List<SanPham>>() {
+				});
+		List<SanPham> sanPhams = responseEntity.getBody();
+		return sanPhams;
+	}
+
+}

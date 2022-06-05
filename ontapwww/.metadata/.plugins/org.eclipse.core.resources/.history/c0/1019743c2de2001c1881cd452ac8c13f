@@ -1,0 +1,6 @@
+package com.iuh.ontap.config;
+
+public class Snippet {
+	Resource '/cuoiki/src/main/java/com/ontap/cuoiki/CuoikiApplication.java' does not exist.
+}
+

@@ -1,0 +1,5 @@
+package com.iuh.ontap.config;
+
+public class MySpringMvcDisspatcherServletInstall {
+
+}

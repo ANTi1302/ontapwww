@@ -1,0 +1,58 @@
+package com.iuh.ontap.model;
+
+
+
+public class SanPham {
+	private int maSP;
+	private String tenSP;
+	private double donGia;
+	private LoaiSP loaiSP;
+	public SanPham() {
+		super();
+	}
+	public SanPham(int maSP, String tenSP, double donGia) {
+		super();
+		this.maSP = maSP;
+		this.tenSP = tenSP;
+		this.donGia = donGia;
+	}
+	
+	public SanPham( String tenSP, double donGia) {
+		super();
+	
+		this.tenSP = tenSP;
+		this.donGia = donGia;
+	}
+	public LoaiSP getLoaiSP() {
+		return loaiSP;
+	}
+	public void setLoaiSP(LoaiSP loaiSP) {
+		this.loaiSP = loaiSP;
+	}
+	public int getMaSP() {
+		return maSP;
+	}
+	public void setMaSP(int maSP) {
+		this.maSP = maSP;
+	}
+	public String getTenSP() {
+		return tenSP;
+	}
+	public void setTenSP(String tenSP) {
+		this.tenSP = tenSP;
+	}
+	public double getDonGia() {
+		return donGia;
+	}
+	public void setDonGia(double donGia) {
+		this.donGia = donGia;
+	}
+	@Override
+	public String toString() {
+		return "SanPham [maSP=" + maSP + ", tenSP=" + tenSP + ", donGia=" + donGia + "]";
+	}
+	
+	
+	
+
+}
